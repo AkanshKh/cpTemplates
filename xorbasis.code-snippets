@@ -1,0 +1,39 @@
+{
+	"xorbasis": {
+  "prefix": "xorbasis",
+  "body": [
+    "vi basis[sis];",
+    "int siz[sis];",
+    "",
+    "void insertVector(int ind,int mask){",
+    "    if(ind != 0){",
+    "        basis[ind] = basis[ind-1];",
+    "        siz[ind] = siz[ind-1];",
+    "    }",
+    "    for(int i = 0; i <= 30; i ++){",
+    "        if(((mask>>i)&1) == 0){continue;}",
+    "        if(basis[ind][i] == 0){",
+    "            basis[ind][i] = mask;",
+    "            siz[ind]++;",
+    "            return;",
+    "        }",
+    "        mask ^= basis[ind][i];",
+    "    }",
+    "}",
+    "",
+    "bool check(int ind,int x){",
+    "    for(int i = 0; i <= 30; i ++){",
+    "        if(((x>>i) & 1) == 0){continue;}",
+    "        if(basis[ind][i]){",
+    "            x ^= basis[ind][i];",
+    "        }",
+    "        else{",
+    "            return false;",
+    "        }",
+    "    }",
+    "    return (x == 0); ",
+    "}"
+  ],
+  "description": "xorbasis"
+}
+}

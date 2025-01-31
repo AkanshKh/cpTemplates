@@ -1,0 +1,26 @@
+{
+	"binpow": {
+  "prefix": "binpow",
+  "body": [
+    "int binpow(int a, int b, int mod = N){",
+    "    int res = 1;",
+    "    a %= mod;",
+    "    while(b){",
+    "        if(b & 1){",
+    "            res *= a;",
+    "            res %= mod;",
+    "        }",
+    "        b >>= 1;",
+    "        a *= a;",
+    "        a %= mod;",
+    "    }",
+    "",
+    "    return res;",
+    "}",
+    "int modInverse(int n){",
+    "    return binpow(n, N - 2);",
+    "}"
+  ],
+  "description": "binpow"
+}
+}

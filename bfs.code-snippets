@@ -1,0 +1,28 @@
+{
+	"bfs": {
+  "prefix": "bfs",
+  "body": [
+    "vi g[sis];",
+    "int vis[sis];",
+    "int siz[sis];",
+    "void bfs(int v){",
+    "    vis[v]=1;",
+    "    queue<int> q;",
+    "    siz[v]=0;",
+    "    q.push(v);",
+    "    while(!q.empty()){",
+    "        int pp=q.front();",
+    "        q.pop();",
+    "        for(auto X:g[pp]){",
+    "            if(vis[X]){continue;}",
+    "            siz[X]=siz[pp]+1;",
+    "            vis[X]=1;",
+    "            q.push(X);",
+    "        }",
+    "    }",
+    "}",
+    ""
+  ],
+  "description": "bfs"
+}
+}

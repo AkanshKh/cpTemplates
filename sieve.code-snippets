@@ -1,0 +1,28 @@
+{
+	"sieve": {
+  "prefix": "sieve",
+  "body": [
+    "",
+    "int isPrime[sis];",
+    "int low[sis];",
+    "vi primes;",
+    "",
+    "void Sieve(){",
+    "    //remember to call sieve in main",
+    "    for(int i = 2; i < sis; i ++){isPrime[i] = 1;}",
+    "    low[0] = 1;",
+    "    low[1] = 1;",
+    "    for(int i = 2; i < sis; i ++){",
+    "        if(!isPrime[i]){continue;}",
+    "        primes.push_back(i);",
+    "        low[i] = i;",
+    "        for(int j = i * i; j < sis; j += i){",
+    "            isPrime[j] = 0;",
+    "            if(low[j] == 0){low[j] = i;}",
+    "        }",
+    "    }",
+    "}"
+  ],
+  "description": "sieve"
+}
+}
